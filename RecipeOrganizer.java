@@ -1,8 +1,8 @@
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 public class RecipeOrganizer {
-    private static RecipeManager recipeManager = new RecipeManager();
+    private static final RecipeManager recipeManager = new RecipeManager();
     private static final String FILENAME = "recipes.dat";
 
     public static void main(String[] args) {
@@ -50,7 +50,7 @@ public class RecipeOrganizer {
             }
         }
 
-        scanner.close();
+       // scanner.close();
     }
 
     private static void addRecipe(Scanner scanner) {
@@ -61,7 +61,14 @@ public class RecipeOrganizer {
         List<String> ingredients = Arrays.asList(scanner.nextLine().split(",\\s*"));
 
         System.out.print("Enter instructions: ");
-        String instructions = scanner.nextLine();
+        String instructions = "";
+        while (true){
+            String line = scanner.nextLine();
+            if (line.toLowerCase().equals("done")) {
+                break;
+            }
+            instructions += line + "\n";
+        }
 
         System.out.print("Enter tags (comma-separated): ");
         List<String> tags = Arrays.asList(scanner.nextLine().split(",\\s*"));
@@ -90,7 +97,7 @@ public class RecipeOrganizer {
         if (choice > 0 && choice <= recipes.size()) {
             System.out.println("\n" + recipes.get(choice - 1));
         }
-        scanner.close();
+        //scanner.close();
     }
 
     private static void searchRecipes(Scanner scanner) {

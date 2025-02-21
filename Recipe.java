@@ -1,10 +1,13 @@
+import java.io.Serializable;
 import java.util.List;
 
-public class Recipe {
-    private String name;
-    private List<String> ingredients;
-    private String instructions;
-    private List<String> tags;
+public class Recipe implements Serializable{
+    private static final long serialVersionUID = 1L;
+
+    private final String name;
+    private final List<String> ingredients;
+    private final String instructions;
+    private final List<String> tags;
 
     public Recipe(String name, List<String> ingredients, String instructions, List<String> tags) {
         this.name = name;
