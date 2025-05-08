@@ -29,6 +29,11 @@ A simple console-based Java application for managing your personal recipe collec
 
 ### Running the Application
 
+Before running, open your terminal (or PowerShell) and navigate to the project directory:
+```
+cd 3112-Recipe-Keeper
+```
+
 #### Windows
 
 1. Open PowerShell or Command Prompt in the project directory.
